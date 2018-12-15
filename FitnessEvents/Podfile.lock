@@ -1,0 +1,22 @@
+PODS:
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - Willow (5.1.0)
+
+DEPENDENCIES:
+  - SDWebImage (~> 4.0)
+  - Willow (~> 5.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SDWebImage
+    - Willow
+
+SPEC CHECKSUMS:
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  Willow: ad7f75939db11f7d56a97df2ca04405815e73125
+
+PODFILE CHECKSUM: ff0c3084f2a31dd7b468baf9c26ed7908fbec137
+
+COCOAPODS: 1.5.3

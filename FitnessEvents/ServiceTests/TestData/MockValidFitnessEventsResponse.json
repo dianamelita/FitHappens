@@ -1,0 +1,58 @@
+{
+    "0": {
+        "endDate": "2019-07-21T23:00:00Z",
+        "iconLink": "https://www.google.com",
+        "id": "1000",
+        "location": {
+            "address": "Knock Mill Lane",
+            "city": "West Kingsdown",
+            "postCode": "TN15 6AH",
+            "venueName": "Heritage Pine Forest"
+        },
+        "name": "LoveFit",
+        "price": 99,
+        "startDate": "2019-07-19T08:00:00Z",
+        "websiteLink": "https://www.lovefitfestival.com"
+    },
+    "4": {
+        "endDate": "2019-07-21T23:00:00Z",
+        "iconLink": "https://www.google.com",
+        "id": "1004",
+        "location": {
+            "address": "Weymouth Beach",
+            "city": "Weymouth",
+            "postCode": "DT4 8ED"
+        },
+        "name": "Jurassic Wheels",
+        "price": 27,
+        "startDate": "2019-07-21T08:30:00Z",
+        "websiteLink": "https://justracinguk.com/event/jurassic-wheels-cyclosportive/"
+    },
+    "5": {
+        "endDate": "2019-07-20T23:00:00Z",
+        "iconLink": "https://www.google.com",
+        "id": "1005",
+        "location": {
+            "address": "Bowleaze Cove",
+            "city": "Weymouth",
+            "postCode": "DT43 6PW"
+        },
+        "name": "Swim The Bay",
+        "price": 27,
+        "startDate": "2019-07-20T09:00:00Z",
+        "websiteLink": "https://justracinguk.com/event/swim-weymouth-bay/"
+    },
+    "15": {
+        "endDate": "2019-08-05T23:00:00Z",
+        "id": "1015",
+        "location": {
+            "city": "London",
+            "postCode": "E20 2ST",
+            "venueName": "Queen Elizabeth Olympic Park"
+        },
+        "name": "RideLondon-Surrey 100",
+        "price": 69,
+        "startDate": "2019-08-04T13:00:00Z",
+        "websiteLink": "https://www.prudentialridelondon.co.uk/events/100/"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "endDate": "2019-07-21T23:00:00Z",
+    "iconLink": "https://www.google.com",
+    "id": "1000",
+    "location": {
+        "address": "Knock Mill Lane",
+        "city": "West Kingsdown",
+        "postCode": "TN15 6AH",
+        "venueName": "Heritage Pine Forest"
+    },
+    "name": "LoveFit",
+    "price": 99,
+    "startDate": "2019-07-19T08:00:00Z",
+    "websiteLink": "https://www.lovefitfestival.com"
+}
