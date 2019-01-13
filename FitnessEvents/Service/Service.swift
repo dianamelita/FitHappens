@@ -11,4 +11,5 @@ import Foundation
 public protocol Service {
     
     var fitnessEvent: FitnessEventService { get }
+    var authentication: AuthenticationService { get set }
 }

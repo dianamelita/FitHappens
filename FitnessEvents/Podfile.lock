@@ -1,31 +1,47 @@
 PODS:
+  - Alamofire (4.8.0)
   - Crashlytics (3.11.1):
     - Fabric (~> 1.8.1)
   - Fabric (1.8.2)
+  - KeychainAccess (3.1.2)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - ValidationComponents (0.3.0):
+    - ValidationToolkit (~> 0.4.1)
+  - ValidationToolkit (0.4.1)
   - Willow (5.1.0)
 
 DEPENDENCIES:
+  - Alamofire
   - Crashlytics
   - Fabric
+  - KeychainAccess
   - SDWebImage (~> 4.0)
+  - ValidationComponents
   - Willow (~> 5.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - Crashlytics
     - Fabric
+    - KeychainAccess
     - SDWebImage
+    - ValidationComponents
+    - ValidationToolkit
     - Willow
 
 SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   Crashlytics: ca7ab4bc304aa216bdc2e4c1a96389ee77252203
   Fabric: d2b22f443ba195d8a7cc204da230977c72733b40
+  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  ValidationComponents: fad1f9e9d7fbf3e10c893c880ef9d27627e90382
+  ValidationToolkit: ce8e9c1a5d49eddc3266a009d46df5ea22042dbc
   Willow: ad7f75939db11f7d56a97df2ca04405815e73125
 
-PODFILE CHECKSUM: d4c75dd49b85117802ecb1be9361cf9469de9f70
+PODFILE CHECKSUM: 88512df9edfda473918fe52eccef2abac22687f5
 
 COCOAPODS: 1.5.3

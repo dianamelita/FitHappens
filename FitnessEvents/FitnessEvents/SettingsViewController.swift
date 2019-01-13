@@ -8,12 +8,16 @@
 
 import UIKit
 import MessageUI
+import Service
 
 class SettingsViewController: UIViewController {
 
+    var service: Service!
+    
     @IBOutlet private weak var tableView: UITableView!
 
     private var settingsOptions = [Option]()
+    private var loginOrLogout = String()
     
     private enum Option {
         
@@ -49,7 +53,7 @@ class SettingsViewController: UIViewController {
             mailComposerVC.mailComposeDelegate = self
             mailComposerVC.setToRecipients(recipients)
             mailComposerVC.setSubject(subject)
-            self.present(mailComposerVC, animated: true, completion: nil)
+            present(mailComposerVC, animated: true, completion: nil)
             
         } else {
             let emailErrorMessage = """
@@ -73,12 +77,27 @@ extension SettingsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return settingsOptions.count
+        return settingsOptions.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let tableCell = tableView.dequeueReusableCell(withIdentifier: "settingsCell", for: indexPath)
+        
+        if indexPath.row == 2 {
+            
+            tableCell.imageView?.image = UIImage(named: "login")
+            
+            if let user = service.authentication.currentUser {
+                
+                tableCell.textLabel?.text = "Logout \(user)"
+            } else {
+                
+                tableCell.textLabel?.text = "Login"
+            }
+            return tableCell
+        }
+        
         let option = settingsOptions[indexPath.row]
         
         switch option {
@@ -113,6 +132,26 @@ extension SettingsViewController: UITableViewDelegate {
             let subject = "Feedback for \(Bundle.main.displayName ?? "")"
             let recipients = ["dezso.diana91@gmail.com"]
             presentMailViewController(subject: subject, recipients: recipients)
+            
+        case 2:
+            
+            if service.authentication.currentUser == nil {
+                
+                service.authentication.authenticate { (success) in
+                    
+                    if success {
+                        
+                        DispatchQueue.main.async {
+                            
+                            tableView.reloadRows(at: [indexPath], with: .none)
+                        }
+                    }
+                }
+            } else {
+                
+                service.authentication.logout()
+                tableView.reloadRows(at: [indexPath], with: .none)
+            }
             
         default:
             return

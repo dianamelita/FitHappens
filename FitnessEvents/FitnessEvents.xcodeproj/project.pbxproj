@@ -13,6 +13,14 @@
 		5DDB09F59E823C8068051F64 /* Pods_Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF4540C84A11D0697BE6EF5 /* Pods_Logging.framework */; };
 		CDB6FD624E59D77200612AE4 /* Pods_ModelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD314057C3B293301AE47D03 /* Pods_ModelTests.framework */; };
 		CF0E683D39E7A7E2DFCD53C8 /* Pods_ServiceTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EF0A9B33782CD342DB59B3 /* Pods_ServiceTests.framework */; };
+		D30D504621CE288D002AA8BC /* OAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D504521CE288D002AA8BC /* OAuthService.swift */; };
+		D30D504821CE2A6D002AA8BC /* AuthenticationServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D504721CE2A6D002AA8BC /* AuthenticationServiceDelegate.swift */; };
+		D30D504A21CE2E28002AA8BC /* UserAuthenticationCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D504921CE2E28002AA8BC /* UserAuthenticationCredentials.swift */; };
+		D30D504C21CE2F34002AA8BC /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D504B21CE2F34002AA8BC /* AuthenticationResponse.swift */; };
+		D30D504E21CE3173002AA8BC /* AuthenticationRefreshResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D504D21CE3173002AA8BC /* AuthenticationRefreshResponse.swift */; };
+		D30D505121CE33FB002AA8BC /* AuthenticationUrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D505021CE33FB002AA8BC /* AuthenticationUrlBuilder.swift */; };
+		D30D505321CF9BC7002AA8BC /* AuthenticationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D505221CF9BC7002AA8BC /* AuthenticationError.swift */; };
+		D30D505521D36BD4002AA8BC /* MockAuthenticationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D505421D36BD4002AA8BC /* MockAuthenticationDelegate.swift */; };
 		D33CFAFA2190DC3E0044E5EE /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38CF0B1218B81FF00104646 /* Networking.framework */; };
 		D33CFAFB2190DC420044E5EE /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38CF0D6218B827300104646 /* Model.framework */; };
 		D33CFAFE219365BB0044E5EE /* FitnessEventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33CFAFC2193659F0044E5EE /* FitnessEventService.swift */; };
@@ -41,7 +49,6 @@
 		D35D69482190C9B8001174F0 /* FitnessEventUrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35D69472190C9B8001174F0 /* FitnessEventUrlBuilder.swift */; };
 		D38CF09B218B7D5000104646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38CF09A218B7D5000104646 /* AppDelegate.swift */; };
 		D38CF09D218B7D5000104646 /* FitnessEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38CF09C218B7D5000104646 /* FitnessEventsViewController.swift */; };
-		D38CF0A0218B7D5000104646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D38CF09E218B7D5000104646 /* Main.storyboard */; };
 		D38CF0A2218B7D5100104646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D38CF0A1218B7D5100104646 /* Assets.xcassets */; };
 		D38CF0A5218B7D5100104646 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D38CF0A3218B7D5100104646 /* LaunchScreen.storyboard */; };
 		D38CF0B5218B81FF00104646 /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = D38CF0B3218B81FF00104646 /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -59,10 +66,13 @@
 		D38CF0EC218B82AF00104646 /* Model.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38CF0D6218B827300104646 /* Model.framework */; };
 		D38CF0FB218B849000104646 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D38CF0C3218B824500104646 /* Service.framework */; };
 		D391F31721A47B14007EF0EE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D391F31621A47B14007EF0EE /* TabBarController.swift */; };
+		D3A0064221CD359C00EA16E2 /* AlamofireNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A0064121CD359C00EA16E2 /* AlamofireNetwork.swift */; };
 		D3A4FFB421AEFDFD00550EA3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4FFB321AEFDFD00550EA3 /* SettingsViewController.swift */; };
 		D3A4FFB821B01B3F00550EA3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4FFB721B01B3F00550EA3 /* AboutViewController.swift */; };
 		D3A4FFBA21B14D5400550EA3 /* Bundle+DisplayName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4FFB921B14D5400550EA3 /* Bundle+DisplayName.swift */; };
 		D3A4FFBC21B711C400550EA3 /* FilterEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4FFBB21B711C400550EA3 /* FilterEventsViewController.swift */; };
+		D3B103DC21E61DBE00E29D41 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B103DB21E61DBE00E29D41 /* LoginViewController.swift */; };
+		D3B103DE21E6251100E29D41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3B103DD21E6251100E29D41 /* Main.storyboard */; };
 		D3D5200921A96587000E5A5C /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D5200821A96587000E5A5C /* EventDetailsViewController.swift */; };
 		D3DC3DC52195F83900EFD63F /* ServiceTestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC3DC42195F83900EFD63F /* ServiceTestError.swift */; };
 		D3DC3DC72195FF8A00EFD63F /* MockInvalidFitnessEventsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D3DC3DC62195FF8900EFD63F /* MockInvalidFitnessEventsResponse.json */; };
@@ -70,6 +80,15 @@
 		D3DD412621989F4400E5C6A7 /* Logging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D344E6D82198861800DEFB15 /* Logging.framework */; };
 		D3DD412A219F3BB100E5C6A7 /* UITableView+Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DD4129219F3BB100E5C6A7 /* UITableView+Message.swift */; };
 		D3DD412C21A02EDD00E5C6A7 /* FitnessEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DD412B21A02EDD00E5C6A7 /* FitnessEventTableViewCell.swift */; };
+		D3FFFAE221D37DB200523CCE /* AuthenticationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FFFAE121D37DB200523CCE /* AuthenticationServiceTests.swift */; };
+		D3FFFAE421D4C6E800523CCE /* MockValidAuthenticationResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D3FFFAE321D4C6E800523CCE /* MockValidAuthenticationResponse.json */; };
+		D3FFFAE621D4DC2000523CCE /* MockValidRefreshAuthenticationResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D3FFFAE521D4DC2000523CCE /* MockValidRefreshAuthenticationResponse.json */; };
+		D3FFFAE821D4EB0700523CCE /* CredentialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FFFAE721D4EB0700523CCE /* CredentialStore.swift */; };
+		D3FFFAEA21D4EE4500523CCE /* SecureCredentialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FFFAE921D4EE4500523CCE /* SecureCredentialStore.swift */; };
+		D3FFFAEC21D61E8D00523CCE /* MockCredentialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FFFAEB21D61E8D00523CCE /* MockCredentialStore.swift */; };
+		D3FFFAEF21DA084400523CCE /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FFFAEE21DA084400523CCE /* AuthenticationService.swift */; };
+		D3FFFAF121DF980C00523CCE /* MockInvalidAuthenticationResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D3FFFAF021DF980C00523CCE /* MockInvalidAuthenticationResponse.json */; };
+		D3FFFAF321DF9D4100523CCE /* MockInvalidRefreshAuthenticationResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D3FFFAF221DF9D4100523CCE /* MockInvalidRefreshAuthenticationResponse.json */; };
 		FA722D120973C8622BBA1FB8 /* Pods_Logging_Model_Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F007BB131CD587D98D4A1B8C /* Pods_Logging_Model_Networking.framework */; };
 /* End PBXBuildFile section */
 
@@ -167,6 +186,14 @@
 		BEF4540C84A11D0697BE6EF5 /* Pods_Logging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Logging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C508074A2968CA36D8804A54 /* Pods-Logging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Logging.release.xcconfig"; path = "Pods/Target Support Files/Pods-Logging/Pods-Logging.release.xcconfig"; sourceTree = "<group>"; };
 		C723795881635ABAC8A4EA17 /* Pods-Model.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Model.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Model/Pods-Model.debug.xcconfig"; sourceTree = "<group>"; };
+		D30D504521CE288D002AA8BC /* OAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthService.swift; sourceTree = "<group>"; };
+		D30D504721CE2A6D002AA8BC /* AuthenticationServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceDelegate.swift; sourceTree = "<group>"; };
+		D30D504921CE2E28002AA8BC /* UserAuthenticationCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticationCredentials.swift; sourceTree = "<group>"; };
+		D30D504B21CE2F34002AA8BC /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
+		D30D504D21CE3173002AA8BC /* AuthenticationRefreshResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRefreshResponse.swift; sourceTree = "<group>"; };
+		D30D505021CE33FB002AA8BC /* AuthenticationUrlBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationUrlBuilder.swift; sourceTree = "<group>"; };
+		D30D505221CF9BC7002AA8BC /* AuthenticationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationError.swift; sourceTree = "<group>"; };
+		D30D505421D36BD4002AA8BC /* MockAuthenticationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthenticationDelegate.swift; sourceTree = "<group>"; };
 		D33CFAFC2193659F0044E5EE /* FitnessEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessEventService.swift; sourceTree = "<group>"; };
 		D33CFAFF2193671A0044E5EE /* FBFitnessEventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBFitnessEventService.swift; sourceTree = "<group>"; };
 		D33CFB0121936B4A0044E5EE /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
@@ -193,7 +220,6 @@
 		D38CF097218B7D5000104646 /* FitnessEvents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitnessEvents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38CF09A218B7D5000104646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D38CF09C218B7D5000104646 /* FitnessEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessEventsViewController.swift; sourceTree = "<group>"; };
-		D38CF09F218B7D5000104646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D38CF0A1218B7D5100104646 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D38CF0A4218B7D5100104646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D38CF0A6218B7D5100104646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -212,15 +238,27 @@
 		D38CF0F6218B849000104646 /* ServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D38CF0FA218B849000104646 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D391F31621A47B14007EF0EE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		D3A0064121CD359C00EA16E2 /* AlamofireNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireNetwork.swift; sourceTree = "<group>"; };
 		D3A4FFB321AEFDFD00550EA3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D3A4FFB721B01B3F00550EA3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D3A4FFB921B14D5400550EA3 /* Bundle+DisplayName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+DisplayName.swift"; sourceTree = "<group>"; };
 		D3A4FFBB21B711C400550EA3 /* FilterEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterEventsViewController.swift; sourceTree = "<group>"; };
+		D3B103DB21E61DBE00E29D41 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D3B103DD21E6251100E29D41 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D3D5200821A96587000E5A5C /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		D3DC3DC42195F83900EFD63F /* ServiceTestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTestError.swift; sourceTree = "<group>"; };
 		D3DC3DC62195FF8900EFD63F /* MockInvalidFitnessEventsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockInvalidFitnessEventsResponse.json; sourceTree = "<group>"; };
 		D3DD4129219F3BB100E5C6A7 /* UITableView+Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Message.swift"; sourceTree = "<group>"; };
 		D3DD412B21A02EDD00E5C6A7 /* FitnessEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessEventTableViewCell.swift; sourceTree = "<group>"; };
+		D3FFFAE121D37DB200523CCE /* AuthenticationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationServiceTests.swift; sourceTree = "<group>"; };
+		D3FFFAE321D4C6E800523CCE /* MockValidAuthenticationResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockValidAuthenticationResponse.json; sourceTree = "<group>"; };
+		D3FFFAE521D4DC2000523CCE /* MockValidRefreshAuthenticationResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockValidRefreshAuthenticationResponse.json; sourceTree = "<group>"; };
+		D3FFFAE721D4EB0700523CCE /* CredentialStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialStore.swift; sourceTree = "<group>"; };
+		D3FFFAE921D4EE4500523CCE /* SecureCredentialStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureCredentialStore.swift; sourceTree = "<group>"; };
+		D3FFFAEB21D61E8D00523CCE /* MockCredentialStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCredentialStore.swift; sourceTree = "<group>"; };
+		D3FFFAEE21DA084400523CCE /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		D3FFFAF021DF980C00523CCE /* MockInvalidAuthenticationResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockInvalidAuthenticationResponse.json; sourceTree = "<group>"; };
+		D3FFFAF221DF9D4100523CCE /* MockInvalidRefreshAuthenticationResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockInvalidRefreshAuthenticationResponse.json; sourceTree = "<group>"; };
 		DFDF1986431E5ED2B99BE7F4 /* Pods-FitnessEvents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitnessEvents.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitnessEvents/Pods-FitnessEvents.release.xcconfig"; sourceTree = "<group>"; };
 		E8B36E2BF9E22A3826FD06D9 /* Pods-ModelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ModelTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ModelTests/Pods-ModelTests.release.xcconfig"; sourceTree = "<group>"; };
 		F007BB131CD587D98D4A1B8C /* Pods_Logging_Model_Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Logging_Model_Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -332,11 +370,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D30D504F21CE3325002AA8BC /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				D30D504921CE2E28002AA8BC /* UserAuthenticationCredentials.swift */,
+				D30D504521CE288D002AA8BC /* OAuthService.swift */,
+				D30D504721CE2A6D002AA8BC /* AuthenticationServiceDelegate.swift */,
+				D3FFFAEE21DA084400523CCE /* AuthenticationService.swift */,
+				D3FFFAE721D4EB0700523CCE /* CredentialStore.swift */,
+				D3FFFAE921D4EE4500523CCE /* SecureCredentialStore.swift */,
+				D30D505221CF9BC7002AA8BC /* AuthenticationError.swift */,
+				D30D504B21CE2F34002AA8BC /* AuthenticationResponse.swift */,
+				D30D504D21CE3173002AA8BC /* AuthenticationRefreshResponse.swift */,
+				D30D505021CE33FB002AA8BC /* AuthenticationUrlBuilder.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		D344E6C82197141500DEFB15 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
 				D33CFB072195EA300044E5EE /* MockValidFitnessEventsResponse.json */,
 				D3DC3DC62195FF8900EFD63F /* MockInvalidFitnessEventsResponse.json */,
+				D3FFFAE321D4C6E800523CCE /* MockValidAuthenticationResponse.json */,
+				D3FFFAF021DF980C00523CCE /* MockInvalidAuthenticationResponse.json */,
+				D3FFFAE521D4DC2000523CCE /* MockValidRefreshAuthenticationResponse.json */,
+				D3FFFAF221DF9D4100523CCE /* MockInvalidRefreshAuthenticationResponse.json */,
 			);
 			path = TestData;
 			sourceTree = "<group>";
@@ -345,6 +404,8 @@
 			isa = PBXGroup;
 			children = (
 				D33CFB052195E5C60044E5EE /* MockNetwork.swift */,
+				D30D505421D36BD4002AA8BC /* MockAuthenticationDelegate.swift */,
+				D3FFFAEB21D61E8D00523CCE /* MockCredentialStore.swift */,
 			);
 			name = MockClasses;
 			path = ..;
@@ -400,10 +461,11 @@
 				D3A4FFB321AEFDFD00550EA3 /* SettingsViewController.swift */,
 				D3D5200821A96587000E5A5C /* EventDetailsViewController.swift */,
 				D3A4FFBB21B711C400550EA3 /* FilterEventsViewController.swift */,
+				D3B103DB21E61DBE00E29D41 /* LoginViewController.swift */,
 				D3A4FFB721B01B3F00550EA3 /* AboutViewController.swift */,
 				D3DD412B21A02EDD00E5C6A7 /* FitnessEventTableViewCell.swift */,
-				D38CF09E218B7D5000104646 /* Main.storyboard */,
 				D38CF0A1218B7D5100104646 /* Assets.xcassets */,
+				D3B103DD21E6251100E29D41 /* Main.storyboard */,
 				D38CF0A3218B7D5100104646 /* LaunchScreen.storyboard */,
 				D38CF0A6218B7D5100104646 /* Info.plist */,
 			);
@@ -416,6 +478,7 @@
 				D38CF0B3218B81FF00104646 /* Networking.h */,
 				D35D693F218F72FB001174F0 /* Network.swift */,
 				D35D6941218F7385001174F0 /* FENetwork.swift */,
+				D3A0064121CD359C00EA16E2 /* AlamofireNetwork.swift */,
 				D35D6943218F7719001174F0 /* NetworkFactory.swift */,
 				D35D6945218F7AF1001174F0 /* NetworkError.swift */,
 				D38CF0B4218B81FF00104646 /* Info.plist */,
@@ -434,6 +497,7 @@
 				D344E6CE2197268D00DEFB15 /* ServiceFactory.swift */,
 				D33CFAFC2193659F0044E5EE /* FitnessEventService.swift */,
 				D33CFAFF2193671A0044E5EE /* FBFitnessEventService.swift */,
+				D30D504F21CE3325002AA8BC /* Authentication */,
 				D38CF0C6218B824500104646 /* Info.plist */,
 			);
 			path = Service;
@@ -486,6 +550,7 @@
 				D344E6C92197148E00DEFB15 /* MockClasses */,
 				D344E6C82197141500DEFB15 /* TestData */,
 				D344E6C62196FA3100DEFB15 /* FitnessEventUrlBuilderTests.swift */,
+				D3FFFAE121D37DB200523CCE /* AuthenticationServiceTests.swift */,
 				D33CFB032195C6A00044E5EE /* FBFitnessEventServiceTests.swift */,
 				D3DC3DC42195F83900EFD63F /* ServiceTestError.swift */,
 				D38CF0FA218B849000104646 /* Info.plist */,
@@ -697,6 +762,11 @@
 					};
 					D38CF096218B7D5000104646 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
 					};
 					D38CF0B0218B81FF00104646 = {
 						CreatedOnToolsVersion = 10.0;
@@ -754,9 +824,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B103DE21E6251100E29D41 /* Main.storyboard in Resources */,
 				D38CF0A5218B7D5100104646 /* LaunchScreen.storyboard in Resources */,
 				D38CF0A2218B7D5100104646 /* Assets.xcassets in Resources */,
-				D38CF0A0218B7D5000104646 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -794,6 +864,10 @@
 			files = (
 				D3DC3DC72195FF8A00EFD63F /* MockInvalidFitnessEventsResponse.json in Resources */,
 				D33CFB082195EA300044E5EE /* MockValidFitnessEventsResponse.json in Resources */,
+				D3FFFAE421D4C6E800523CCE /* MockValidAuthenticationResponse.json in Resources */,
+				D3FFFAE621D4DC2000523CCE /* MockValidRefreshAuthenticationResponse.json in Resources */,
+				D3FFFAF321DF9D4100523CCE /* MockInvalidRefreshAuthenticationResponse.json in Resources */,
+				D3FFFAF121DF980C00523CCE /* MockInvalidAuthenticationResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,14 +994,22 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Logging-Model-Networking-Service-FitnessEvents/Pods-Logging-Model-Networking-Service-FitnessEvents-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Willow/Willow.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/ValidationComponents/ValidationComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/ValidationToolkit/ValidationToolkit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Willow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ValidationComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ValidationToolkit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -944,12 +1026,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ServiceTests/Pods-ServiceTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Willow/Willow.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Willow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1065,6 +1151,7 @@
 				D38CF09B218B7D5000104646 /* AppDelegate.swift in Sources */,
 				D3A4FFB821B01B3F00550EA3 /* AboutViewController.swift in Sources */,
 				D3DD412C21A02EDD00E5C6A7 /* FitnessEventTableViewCell.swift in Sources */,
+				D3B103DC21E61DBE00E29D41 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1073,6 +1160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D35D6944218F7719001174F0 /* NetworkFactory.swift in Sources */,
+				D3A0064221CD359C00EA16E2 /* AlamofireNetwork.swift in Sources */,
 				D35D6946218F7AF1001174F0 /* NetworkError.swift in Sources */,
 				D35D6940218F72FB001174F0 /* Network.swift in Sources */,
 				D35D6942218F7385001174F0 /* FENetwork.swift in Sources */,
@@ -1083,13 +1171,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D30D505321CF9BC7002AA8BC /* AuthenticationError.swift in Sources */,
+				D30D504E21CE3173002AA8BC /* AuthenticationRefreshResponse.swift in Sources */,
 				D344E6CD219725D800DEFB15 /* FEService.swift in Sources */,
+				D30D505121CE33FB002AA8BC /* AuthenticationUrlBuilder.swift in Sources */,
+				D30D504821CE2A6D002AA8BC /* AuthenticationServiceDelegate.swift in Sources */,
+				D3FFFAEA21D4EE4500523CCE /* SecureCredentialStore.swift in Sources */,
 				D33CFB0221936B4A0044E5EE /* ServiceError.swift in Sources */,
+				D3FFFAE821D4EB0700523CCE /* CredentialStore.swift in Sources */,
 				D33CFB002193671A0044E5EE /* FBFitnessEventService.swift in Sources */,
 				D344E6CB2197255800DEFB15 /* Service.swift in Sources */,
+				D30D504A21CE2E28002AA8BC /* UserAuthenticationCredentials.swift in Sources */,
 				D344E6CF2197268D00DEFB15 /* ServiceFactory.swift in Sources */,
 				D35D69482190C9B8001174F0 /* FitnessEventUrlBuilder.swift in Sources */,
+				D3FFFAEF21DA084400523CCE /* AuthenticationService.swift in Sources */,
 				D33CFAFE219365BB0044E5EE /* FitnessEventService.swift in Sources */,
+				D30D504C21CE2F34002AA8BC /* AuthenticationResponse.swift in Sources */,
+				D30D504621CE288D002AA8BC /* OAuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1116,10 +1214,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3FFFAE221D37DB200523CCE /* AuthenticationServiceTests.swift in Sources */,
+				D3FFFAEC21D61E8D00523CCE /* MockCredentialStore.swift in Sources */,
 				D344E6D121987C4700DEFB15 /* MockNetwork.swift in Sources */,
 				D3DC3DC52195F83900EFD63F /* ServiceTestError.swift in Sources */,
 				D33CFB042195C6A00044E5EE /* FBFitnessEventServiceTests.swift in Sources */,
 				D344E6C72196FA3100DEFB15 /* FitnessEventUrlBuilderTests.swift in Sources */,
+				D30D505521D36BD4002AA8BC /* MockAuthenticationDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1159,14 +1260,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D38CF09E218B7D5000104646 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D38CF09F218B7D5000104646 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D38CF0A3218B7D5100104646 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

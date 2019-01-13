@@ -8,12 +8,14 @@
 
 import Foundation
 
- class FEService: Service {
+class FEService: Service {
     
+    var authentication: AuthenticationService
     var fitnessEvent: FitnessEventService
     
-    init(fitnessEvent: FitnessEventService) {
+    init(fitnessEvent: FitnessEventService, authentication: AuthenticationService) {
         
         self.fitnessEvent = fitnessEvent
+        self.authentication = authentication
     }
 }

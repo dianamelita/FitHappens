@@ -17,8 +17,12 @@ target 'Logging' do
 
     target 'Networking' do
       
+      pod 'Alamofire'
+      
       target 'Service' do
       
+        pod 'KeychainAccess'
+        
         target 'ServiceTests' do
           inherit! :search_paths
           # Pods for testing
@@ -29,6 +33,7 @@ target 'Logging' do
           pod 'SDWebImage', '~> 4.0'
           pod 'Fabric'
           pod 'Crashlytics'
+          pod 'ValidationComponents'
         end
       end
     end

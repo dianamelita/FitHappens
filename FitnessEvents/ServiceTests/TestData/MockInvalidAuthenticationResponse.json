@@ -1,0 +1,9 @@
+{
+    "kind": "identitytoolkit#VerifyPasswordResponse",
+    "localId": "VMpBBiZoRqbC2aDwZPCI8O18vkh1",
+    "email": "test@test.com",
+    "displayName": "",
+    "registered": true,
+    "refreshToken": "AGK09AO_ubJyuf1PcL6x4agNfUKtMJBgnD5o4uKO2OrSo3IWk4xNKaNhPkF2g3Py7tBJob47kKmuryyem5eWY_R67OTByrQ5-4LkQDXmN0MN-KgEhfbRIIjgExpfE9KITmHr4zeJgS8ZoLbfrqPB92lTv8WWvyqT0FUFD3DiKxR-WcKTvaa0I8mUkt1oL3pD3bJgRtBQZbcLTAu4mOYbgTu1cW_w0FGhjA",
+    "expiresIn": "3600"
+}

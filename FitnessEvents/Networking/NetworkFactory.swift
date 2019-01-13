@@ -12,6 +12,6 @@ public class NetworkFactory {
     
     public static func makeNetwork() -> Network {
     
-        return FENetwork()
+        return AlamofireNetwork()
     }
 }

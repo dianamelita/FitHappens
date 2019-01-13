@@ -14,9 +14,14 @@ public class ServiceFactory {
     
     public static func makeService() -> Service {
         
+        let authKey = "REPLACE_WITH_API_KEY"
+        let network = NetworkFactory.makeNetwork()
         log.debugMessage("Creating service.")
         let fbFitnessEventService = FBFitnessEventService(urlBuilder: FitnessEventUrlBuilder(),
-                                                          network: NetworkFactory.makeNetwork())
-        return FEService(fitnessEvent: fbFitnessEventService)
+                                                          network: network)
+        let authenticationService = OAuthService(network: network,
+                                                               urlBuilder: AuthenticationUrlBuilder(authKey: authKey),
+                                                                  credentialStore: SecureCredentialStore())
+        return FEService(fitnessEvent: fbFitnessEventService, authentication: authenticationService)
     }
 }
