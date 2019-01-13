@@ -62,6 +62,7 @@
 		D3A4FFB421AEFDFD00550EA3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4FFB321AEFDFD00550EA3 /* SettingsViewController.swift */; };
 		D3A4FFB821B01B3F00550EA3 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4FFB721B01B3F00550EA3 /* AboutViewController.swift */; };
 		D3A4FFBA21B14D5400550EA3 /* Bundle+DisplayName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4FFB921B14D5400550EA3 /* Bundle+DisplayName.swift */; };
+		D3A4FFBC21B711C400550EA3 /* FilterEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A4FFBB21B711C400550EA3 /* FilterEventsViewController.swift */; };
 		D3D5200921A96587000E5A5C /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D5200821A96587000E5A5C /* EventDetailsViewController.swift */; };
 		D3DC3DC52195F83900EFD63F /* ServiceTestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DC3DC42195F83900EFD63F /* ServiceTestError.swift */; };
 		D3DC3DC72195FF8A00EFD63F /* MockInvalidFitnessEventsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = D3DC3DC62195FF8900EFD63F /* MockInvalidFitnessEventsResponse.json */; };
@@ -214,6 +215,7 @@
 		D3A4FFB321AEFDFD00550EA3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D3A4FFB721B01B3F00550EA3 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		D3A4FFB921B14D5400550EA3 /* Bundle+DisplayName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+DisplayName.swift"; sourceTree = "<group>"; };
+		D3A4FFBB21B711C400550EA3 /* FilterEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterEventsViewController.swift; sourceTree = "<group>"; };
 		D3D5200821A96587000E5A5C /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		D3DC3DC42195F83900EFD63F /* ServiceTestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTestError.swift; sourceTree = "<group>"; };
 		D3DC3DC62195FF8900EFD63F /* MockInvalidFitnessEventsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MockInvalidFitnessEventsResponse.json; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				D38CF09C218B7D5000104646 /* FitnessEventsViewController.swift */,
 				D3A4FFB321AEFDFD00550EA3 /* SettingsViewController.swift */,
 				D3D5200821A96587000E5A5C /* EventDetailsViewController.swift */,
+				D3A4FFBB21B711C400550EA3 /* FilterEventsViewController.swift */,
 				D3A4FFB721B01B3F00550EA3 /* AboutViewController.swift */,
 				D3DD412B21A02EDD00E5C6A7 /* FitnessEventTableViewCell.swift */,
 				D38CF09E218B7D5000104646 /* Main.storyboard */,
@@ -566,6 +569,7 @@
 				D38CF095218B7D5000104646 /* Resources */,
 				D38CF0BD218B81FF00104646 /* Embed Frameworks */,
 				9DD2822FE992D8DBFE690A5D /* [CP] Embed Pods Frameworks */,
+				D3D5D39721BD5C6000F1AE3A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -996,6 +1000,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D3D5D39721BD5C6000F1AE3A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 4d068f4b8ebb68e3238f2304ef8c2b118f6af98a 487e0c6c6c956105a51a95836746d6a91f26989bd524f524e0737d7d1b0abe9f\n\n";
+		};
 		FA2BE0F9F2FFF5253A0547A1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1035,6 +1057,7 @@
 			files = (
 				D3D5200921A96587000E5A5C /* EventDetailsViewController.swift in Sources */,
 				D391F31721A47B14007EF0EE /* TabBarController.swift in Sources */,
+				D3A4FFBC21B711C400550EA3 /* FilterEventsViewController.swift in Sources */,
 				D3A4FFB421AEFDFD00550EA3 /* SettingsViewController.swift in Sources */,
 				D3DD412A219F3BB100E5C6A7 /* UITableView+Message.swift in Sources */,
 				D3A4FFBA21B14D5400550EA3 /* Bundle+DisplayName.swift in Sources */,
@@ -1161,7 +1184,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = PVZPBV2G42;
@@ -1178,6 +1201,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dezsodiana.Logging;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1193,7 +1217,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = PVZPBV2G42;
@@ -1210,6 +1234,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dezsodiana.Logging;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1342,6 +1367,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = PVZPBV2G42;
 				INFOPLIST_FILE = FitnessEvents/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -1386,7 +1412,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = PVZPBV2G42;
@@ -1403,6 +1429,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dezsodiana.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1418,7 +1445,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = PVZPBV2G42;
@@ -1435,6 +1462,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dezsodiana.Networking;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1450,7 +1478,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = PVZPBV2G42;
@@ -1467,6 +1495,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dezsodiana.Service;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1483,7 +1512,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = PVZPBV2G42;
@@ -1500,6 +1529,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dezsodiana.Service;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1515,7 +1545,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = PVZPBV2G42;
@@ -1532,6 +1562,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dezsodiana.Model;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -1547,8 +1578,8 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = PVZPBV2G42;
@@ -1565,6 +1596,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dezsodiana.Model;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

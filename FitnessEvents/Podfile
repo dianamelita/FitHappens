@@ -27,7 +27,8 @@ target 'Logging' do
         target 'FitnessEvents' do
         
           pod 'SDWebImage', '~> 4.0'
-        
+          pod 'Fabric'
+          pod 'Crashlytics'
         end
       end
     end

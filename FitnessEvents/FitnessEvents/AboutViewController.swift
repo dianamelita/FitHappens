@@ -8,6 +8,7 @@
 
 import UIKit
 import Logging
+import SafariServices
 
 class AboutViewController: UIViewController {
     
@@ -30,13 +31,7 @@ class AboutViewController: UIViewController {
             return
         }
         
-        UIApplication.shared.open(resourceUrl, options: [:]) { (success) in
-            
-            guard success == true else {
-                
-                log.errorMessage("Could not open url for event website: \(resourceUrl)")
-                return
-            }
-        }
+        let safariViewController = SFSafariViewController(url: resourceUrl)
+        present(safariViewController, animated: true, completion: nil)
     }
 }

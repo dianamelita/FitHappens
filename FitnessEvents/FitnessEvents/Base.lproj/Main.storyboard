@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +18,7 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.054901960780000002" green="0.31764705879999999" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.41568627450980389" green="0.034773775908857954" blue="0.55891100888324874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -172,21 +171,126 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D0F-uF-PKF" secondAttribute="trailing" id="9YJ-Wv-bF8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="D0F-uF-PKF" secondAttribute="bottom" id="O00-np-uyr"/>
                             <constraint firstItem="D0F-uF-PKF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cwI-YT-wd0"/>
-                            <constraint firstItem="D0F-uF-PKF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fiw-4f-YmG"/>
+                            <constraint firstItem="D0F-uF-PKF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yWv-Fq-hKw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Events" image="tab_calendar" id="WmC-oA-H9c"/>
                     <navigationItem key="navigationItem" title="Events" id="4mI-9Q-UkP">
                         <barButtonItem key="backBarButtonItem" title="Back" id="7Ln-XL-EIe"/>
+                        <barButtonItem key="rightBarButtonItem" title="filterBarItem" style="done" id="iFM-Pa-0Gg">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Q1w-8z-6Bd" userLabel="filterButton">
+                                <rect key="frame" x="339" y="11" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="filter_off_white"/>
+                                <connections>
+                                    <segue destination="0fK-vS-9LV" kind="presentation" identifier="filterSegue" id="IlI-TT-CI8"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="filterButton" destination="Q1w-8z-6Bd" id="sFx-5k-BEz"/>
                         <outlet property="tableView" destination="D0F-uF-PKF" id="i8B-kf-HST"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="874" y="-1191"/>
+        </scene>
+        <!--Navigation Filter-->
+        <scene sceneID="2yD-Pj-ecP">
+            <objects>
+                <navigationController title="Navigation Filter" id="0fK-vS-9LV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4M4-UG-L4j">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.41568627450980389" green="0.035294117647058823" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GoF-Bo-lv6" kind="relationship" relationship="rootViewController" id="cXd-UG-GSF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NmH-F8-ecA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1694" y="-1961"/>
+        </scene>
+        <!--Filter-->
+        <scene sceneID="gkx-Ps-fGI">
+            <objects>
+                <viewController title="Filter" id="GoF-Bo-lv6" customClass="FilterEventsViewController" customModule="FitnessEvents" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K6o-lW-xyN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1zI-yd-dsH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="514"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="locationCell" id="mIx-L6-Mgz">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mIx-L6-Mgz" id="dEX-WS-jLa">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jpp-SL-FXc">
+                                <rect key="frame" x="0.0" y="578" width="375" height="45"/>
+                                <color key="backgroundColor" red="0.41568627450980389" green="0.035294117647058823" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="7TT-uo-4B1"/>
+                                </constraints>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapDone:" destination="GoF-Bo-lv6" eventType="touchUpInside" id="11k-EZ-idD"/>
+                                    <segue destination="sEl-RO-u15" kind="unwind" identifier="unwindToEvents" unwindAction="unwindToEventsWithSegue:" id="uTG-vg-q9F"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1zI-yd-dsH" firstAttribute="leading" secondItem="q6A-zf-FmK" secondAttribute="leading" id="7zk-rX-G1U"/>
+                            <constraint firstItem="Jpp-SL-FXc" firstAttribute="leading" secondItem="q6A-zf-FmK" secondAttribute="leading" id="JW6-hp-0st"/>
+                            <constraint firstAttribute="trailing" secondItem="Jpp-SL-FXc" secondAttribute="trailing" id="Rx9-D9-S4C" userLabel="Safe Area.trailing = Done.trailing"/>
+                            <constraint firstItem="1zI-yd-dsH" firstAttribute="top" secondItem="q6A-zf-FmK" secondAttribute="top" id="cth-g1-0Wt"/>
+                            <constraint firstItem="Jpp-SL-FXc" firstAttribute="top" secondItem="1zI-yd-dsH" secondAttribute="bottom" id="dQJ-2J-hh6"/>
+                            <constraint firstItem="q6A-zf-FmK" firstAttribute="bottom" secondItem="Jpp-SL-FXc" secondAttribute="bottom" id="hqK-tz-zW8"/>
+                            <constraint firstItem="q6A-zf-FmK" firstAttribute="trailing" secondItem="1zI-yd-dsH" secondAttribute="trailing" id="lFT-Gy-JOO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="q6A-zf-FmK"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Locations" id="YCr-r9-x6W">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="4iN-0A-0lw">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didTapCancel:" destination="GoF-Bo-lv6" id="PFE-oo-FqI"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="8Ea-Zi-vM2">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didTapClear:" destination="GoF-Bo-lv6" id="3eK-is-MHO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="1zI-yd-dsH" id="5xy-NA-M7l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wAs-bX-Rqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="sEl-RO-u15" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2485.5999999999999" y="-1961.4692653673164"/>
         </scene>
         <!--Event Details-->
         <scene sceneID="6OB-bB-klb">
@@ -404,7 +508,7 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.054901960780000002" green="0.31764705879999999" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.41568627450980389" green="0.035294117647058823" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -481,6 +585,7 @@
     </scenes>
     <resources>
         <image name="calendar" width="20" height="20"/>
+        <image name="filter_off_white" width="20" height="20"/>
         <image name="location" width="20" height="20"/>
         <image name="money" width="20" height="20"/>
         <image name="tab_calendar" width="25" height="25"/>
